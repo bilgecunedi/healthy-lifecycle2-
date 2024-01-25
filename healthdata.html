@@ -1,0 +1,62 @@
+form method="POST">
+ <label for="blood_test_results">Blood Test Results:</label><br>
+ <input type="text" id="blood_test_results" name="blood_test_results" required><br>
+ <label for="weight">Weight (in kg):</label><br>
+ <input type="number" id="weight" name="weight" step="0.01" required><br>
+ <label for="height">Height (in cm):</label><br>
+ <input type="number" id="height" name="height" step="0.01" required><br>
+ <input type="submit" value="Submit Health Data">
+</form>
+
+
+<form method="POST">
+    <!-- Existing form fields -->
+   </form>
+   
+   <h2>Food List Based on Your Diet Preferences:</h2>
+   <ul>
+    {% for food in food_list %}
+    <li>{{ food }}</li>
+    {% endfor %}
+   </ul>
+
+   <form method="POST">
+    <!-- Existing form fields -->
+   </form>
+   
+   <h2>Food List Based on Your Diet Preferences:</h2>
+   <ul>
+    {% for food in food_list %}
+    <li>{{ food }} - Nutritional Info: {{ food_nutritional_info[food] }}</li>
+    {% endfor %}
+   </ul>
+
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Exercise Algorithm</title>
+   </head>
+   <body>
+       <h1>Exercise Algorithm</h1>
+       <form action="{{ url_for('exercise') }}" method="post">
+           <label for="user_id">User ID:</label>
+           <input type="text" id="user_id" name="user_id" required>
+           <br>
+           <label for="exercise_id">Exercise ID:</label>
+           <input type="text" id="exercise_id" name="exercise_id" required>
+           <br>
+           <label for="frequency">Frequency:</label>
+           <input type="text" id="frequency" name="frequency" required>
+           <br>
+           <label for="duration">Duration:</label>
+           <input type="text" id="duration" name="duration" required>
+           <br>
+           <input type="submit" value="Submit">
+       </form>
+       <h2>User Data:</h2>
+       <ul>
+           {% for user_id, exercise_data in users.items() %}
+               <li>User ID: {{ user_id }} - Exerci
